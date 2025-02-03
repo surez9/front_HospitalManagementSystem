@@ -15,5 +15,9 @@ export class PatientService {
   getPatientList():Observable<Patient[]>{
     return this.httpClient.get<Patient[]>(`${this.baseUrl+"all"}`)
   }
+
+  deletePatient(id:number):Observable<object>{
+    return this.httpClient.delete(`${this.baseUrl+"delete"}/${id}`);
+  }
   
 }
