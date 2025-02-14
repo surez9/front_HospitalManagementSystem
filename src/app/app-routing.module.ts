@@ -14,6 +14,7 @@ import { ViewPatientComponent } from './view-patient/view-patient.component';
 import { DocloginComponent } from './doclogin/doclogin.component';
 import { AdloginComponent } from './adlogin/adlogin.component';
 import { AdminauthguardService } from './adminauthguard.service';
+import { DocauthguardService } from './docauthguard.service';
 
 const routes: Routes = [
   {
@@ -32,25 +33,25 @@ const routes: Routes = [
     path:'create-appointment',component:CreateAppointmentComponent,canActivate:[AdminauthguardService]
   },
   {
-    path:'docdash',component:DocdashComponent
+    path:'docdash',component:DocdashComponent, canActivate:[DocauthguardService]
   },
   {
-    path:'createpatient',component:CreatePatientComponent
+    path:'createpatient',component:CreatePatientComponent,canActivate:[DocauthguardService]
   },
   {
-    path:'medicineList',component:MedicineComponent
+    path:'medicineList',component:MedicineComponent,canActivate:[DocauthguardService]
   },
   {
-    path:'create-medicine',component:CreateMedicineComponent
+    path:'create-medicine',component:CreateMedicineComponent,canActivate:[DocauthguardService]
   },
   {
-    path:'update-patient/:id',component:UpdatePatientComponent
+    path:'update-patient/:id',component:UpdatePatientComponent,canActivate:[DocauthguardService]
   },
   {
-    path:'update-medicine/:id',component:UpdateMedicineComponent
+    path:'update-medicine/:id',component:UpdateMedicineComponent,canActivate:[DocauthguardService]
   },
   {
-    path:'view-patient/:id',component:ViewPatientComponent
+    path:'view-patient/:id',component:ViewPatientComponent,canActivate:[DocauthguardService]
   },
   {
     path:'doclogin',component:DocloginComponent

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Patient } from '../patient';
 import { PatientService } from '../patient.service';
 import { Router } from '@angular/router';
+import { DocauthService } from '../docauth.service';
 
 @Component({
   selector: 'app-docdash',
@@ -16,7 +17,7 @@ export class DocdashComponent {
 
   patient:Patient = new Patient;
 
-  constructor(private patientService:PatientService, private router:Router){}
+  constructor(private patientService:PatientService, private router:Router,private docAuthService:DocauthService){}
 
   ngOnInit():void{
     this.getPatients();
@@ -41,5 +42,11 @@ export class DocdashComponent {
 
   view(id:number){
     this.router.navigate(['view-patient',id]);
+  }
+
+  logout(){
+    this.docAuthService.logout();
+    this.router.navigate(['home']);
+
   }
 }

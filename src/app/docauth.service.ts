@@ -9,7 +9,7 @@ export class DocauthService {
 
   authenticate(username:string,password:string){
     if(username=="doc"&&password=="doc123"){
-      sessionStorage.setItem('username',username);
+      sessionStorage.setItem('docUsername',username);
       return true;
     }
     else{
@@ -20,10 +20,10 @@ export class DocauthService {
 
   isUserLoggedIn(){
     console.log("User Logged In");
-    let user = sessionStorage.getItem('adminUsername');
+    let user = sessionStorage.getItem('docUsername');
     return !(user==null)
   }
   logout(){
-    sessionStorage.removeItem('adminUsername');
+    sessionStorage.removeItem('docUsername');
   }
 }
