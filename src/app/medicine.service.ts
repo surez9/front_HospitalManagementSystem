@@ -19,4 +19,13 @@ export class MedicineService {
   saveMedicine(medicine:Medicine):Observable<Medicine>{
     return this.httpClient.post<Medicine>(`${this.baseUrl}insert`,medicine);
   }
+
+  getMedicineById(id:number):Observable<Medicine>{
+    return this.httpClient.get<Medicine>(`${this.baseUrl}${id}`);
+  }
+
+  updateMedicine(id:number,medicine:Medicine):Observable<Medicine>{
+    return this.httpClient.put<Medicine>(`${this.baseUrl}update/${id}`,medicine);
+  }
+
 }

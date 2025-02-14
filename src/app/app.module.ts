@@ -13,6 +13,8 @@ import { DocdashComponent } from './docdash/docdash.component';
 import { CreatePatientComponent } from './create-patient/create-patient.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { CreateMedicineComponent } from './create-medicine/create-medicine.component';
+import { UpdatePatientComponent } from './update-patient/update-patient.component';
+import { UpdateMedicineComponent } from './update-medicine/update-medicine.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CreateMedicineComponent } from './create-medicine/create-medicine.compo
     DocdashComponent,
     CreatePatientComponent,
     MedicineComponent,
-    CreateMedicineComponent
+    CreateMedicineComponent,
+    UpdatePatientComponent,
+    UpdateMedicineComponent
   ],
   imports: [
     BrowserModule,

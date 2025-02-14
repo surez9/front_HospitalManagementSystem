@@ -8,6 +8,8 @@ import { DocdashComponent } from './docdash/docdash.component';
 import { CreatePatientComponent } from './create-patient/create-patient.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { CreateMedicineComponent } from './create-medicine/create-medicine.component';
+import { UpdatePatientComponent } from './update-patient/update-patient.component';
+import { UpdateMedicineComponent } from './update-medicine/update-medicine.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,12 @@ const routes: Routes = [
   },
   {
     path:'create-medicine',component:CreateMedicineComponent
+  },
+  {
+    path:'update-patient/:id',component:UpdatePatientComponent
+  },
+  {
+    path:'update-medicine/:id',component:UpdateMedicineComponent
   }
 ];
 

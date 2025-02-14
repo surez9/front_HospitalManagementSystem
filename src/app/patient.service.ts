@@ -13,7 +13,10 @@ export class PatientService {
   private baseUrl="http://localhost:8080/api/v1/patient/";
 
   getPatientList():Observable<Patient[]>{
-    return this.httpClient.get<Patient[]>(`${this.baseUrl+"all"}`)
+    return this.httpClient.get<Patient[]>(`${this.baseUrl+"all"}`);
+  }
+  getPatientById(id:number):Observable<Patient>{
+    return this.httpClient.get<Patient>(`${this.baseUrl}${id}`);
   }
 
   deletePatient(id:number):Observable<object>{
@@ -24,4 +27,8 @@ export class PatientService {
     return this.httpClient.post<Patient>(`${this.baseUrl}insert`,patient);
   }
   
+  updatePatient(id:number, patient:Patient):Observable<Patient>{
+    return this.httpClient.put<Patient>(`${this.baseUrl}update/${id}`,patient);
+  }
+
 }

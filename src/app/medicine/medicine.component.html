@@ -31,12 +31,14 @@
         <th>Id</th>
         <th>Drug Name</th>
         <th>Stock</th>
+        <th>Action</th>
     </thead>
     <tbody>
         <tr *ngFor="let medicine of medicines">
             <td>{{medicine.id}}</td>
             <td>{{medicine.drugName}}</td>
             <td>{{medicine.stock}}</td>
+            <button class="btn btn-primary" (click)="update(medicine.id)">Update</button>
         </tr>
     </tbody>
 </table>
