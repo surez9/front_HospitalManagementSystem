@@ -28,4 +28,8 @@ export class MedicineService {
     return this.httpClient.put<Medicine>(`${this.baseUrl}update/${id}`,medicine);
   }
 
+  deleteMedicine(id:number):Observable<object>{
+    return this.httpClient.delete(`${this.baseUrl}delete/${id}`);
+  }
+
 }

@@ -32,4 +32,14 @@ export class DocdashComponent {
     this.router.navigate(['update-patient',id]); 
   }
 
+  delete(id:number){
+    this.patientService.deletePatient(id).subscribe(data=>{
+      console.log(data);
+      this.getPatients();
+    })
+  }
+
+  view(id:number){
+    this.router.navigate(['view-patient',id]);
+  }
 }

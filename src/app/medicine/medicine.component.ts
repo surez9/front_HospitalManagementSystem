@@ -31,4 +31,11 @@ export class MedicineComponent {
     this.router.navigate(['update-medicine',id]);
   }
 
+  delete(id:number){
+    this.medicineService.deleteMedicine(id).subscribe(data=>{
+      console.log(data);
+      this.getMedicineList();
+    })
+  }
+
 }

@@ -38,7 +38,8 @@
             <td>{{medicine.id}}</td>
             <td>{{medicine.drugName}}</td>
             <td>{{medicine.stock}}</td>
-            <button class="btn btn-primary" (click)="update(medicine.id)">Update</button>
+            <button class="btn btn-info" (click)="update(medicine.id)">Update</button>
+            <button class="btn btn-danger" (click)="delete(medicine.id)">Delete</button>
         </tr>
     </tbody>
 </table>

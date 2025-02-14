@@ -55,7 +55,10 @@
             <td>{{patient.prescription}}</td>
             <td>{{patient.bloodGroup}}</td>
             <td>{{patient.urgency}}</td>
-            <button class="btn btn-primary" (click)="update(patient.id)">Update</button>
+            <button class="btn btn-info" (click)="update(patient.id)">Update</button>
+            <button class="btn btn-danger" (click)="delete(patient.id)">Delete</button>
+            <button class="btn btn-success" (click)="view(patient.id)">View</button>
+            
         </tr>
     </tbody>
 </table>
