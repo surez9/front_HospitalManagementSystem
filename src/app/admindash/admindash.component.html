@@ -11,6 +11,9 @@
           </li>
       </ul>
     </div>
+    <div class="mx-2">
+       <button style="margin: 5px;" class="btn btn-danger" data-toggle="modal" data-target="#loginModal"><a style="color: white;" href="javascript:void(0);" (click)="logout()">Logout</a></button>
+</div>
   </nav>
   
   <div class="container">
@@ -29,10 +32,9 @@
             <th>Id</th>
             <th>Name</th>
             <th>Age</th>
-            <th>Blood Group</th>
-            <th>Prescription</th>
-            <th>Dose</th>
+            <th>Fees</th>
             <th>Urgency</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -40,10 +42,11 @@
             <td>{{patient.id}}</td>
             <td>{{patient.name}}</td>
             <td>{{patient.age}}</td>
-            <td>{{patient.bloodGroup}}</td>
-            <td>{{patient.prescription}}</td>
-            <td>{{patient.dose}}</td>
+            <td>{{patient.fees}}</td>
             <td>{{patient.urgency}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="delete(patient.id)">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>

@@ -19,4 +19,8 @@ export class AppointmentService {
   createAppointment(appointment:Appointment):Observable<Appointment>{
     return this.httpClient.post<Appointment>(`${this.baseUrl+"insert"}`,appointment)
   }
+
+  deleteAppointment(id:number):Observable<object>{
+    return this.httpClient.delete(`${this.baseUrl+"delete"}/${id}`);
+  }
 }
