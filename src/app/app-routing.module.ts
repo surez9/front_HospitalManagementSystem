@@ -13,6 +13,7 @@ import { UpdateMedicineComponent } from './update-medicine/update-medicine.compo
 import { ViewPatientComponent } from './view-patient/view-patient.component';
 import { DocloginComponent } from './doclogin/doclogin.component';
 import { AdloginComponent } from './adlogin/adlogin.component';
+import { AdminauthguardService } from './adminauthguard.service';
 
 const routes: Routes = [
   {
@@ -22,13 +23,13 @@ const routes: Routes = [
     path:'',redirectTo:'home',pathMatch:'full'
   },
   {
-    path:'admin',component:AdmindashComponent
+    path:'admin',component:AdmindashComponent, canActivate:[AdminauthguardService]
   },
   {
-    path:'appointmentlist',component:AppointmentComponent
+    path:'appointmentlist',component:AppointmentComponent,canActivate:[AdminauthguardService]
   },
   {
-    path:'create-appointment',component:CreateAppointmentComponent
+    path:'create-appointment',component:CreateAppointmentComponent,canActivate:[AdminauthguardService]
   },
   {
     path:'docdash',component:DocdashComponent
